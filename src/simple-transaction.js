@@ -5,6 +5,7 @@
 const RippleAPI = require('ripple-lib').RippleAPI;
 
 var newTx;
+var maxLv;
 
 const api = new RippleAPI({
     server: 'wss://s.altnet.rippletest.net:51233' // Ripple testnet
@@ -16,13 +17,14 @@ api.connect().then(() =>{
         const preparedTx = await api.prepareTransaction({
             "TransactionType": "Payment",
             "Account": sender,
-            "Amount": api.xrpToDrops("22"), // Same as "Amount": "22000000"
+            "Amount": api.xrpToDrops("23"), // Same as "Amount": "22000000"
             "Destination": "rUCzEr6jrEyMpjhs4wSdQdz4g8Y382NxfM"
         }, {
             // Expire this transaction if it doesn't execute within ~5 minutes:
             "maxLedgerVersionOffset": 75
         })
         const maxLedgerVersion = preparedTx.instructions.maxLedgerVersion
+        maxLv = maxLedgerVersion
         console.log("Prepared transaction instructions:", preparedTx.txJSON)
         console.log("Transaction cost:", preparedTx.instructions.fee, "XRP")
         console.log("Transaction expires after ledger:", maxLedgerVersion)
@@ -33,7 +35,7 @@ api.connect().then(() =>{
     return txJSON;
 
 } ).then(txJSON=>{
-    // Continuing from the previous step...
+    // Grab txJSON from previous step
     const response = api.sign(txJSON, "shQBTUeR39GeqqMjeRU78cGAv1sEA")
     const txID = response.id
     newTx = txID
@@ -62,6 +64,7 @@ api.connect().then(() =>{
 }).then(eLV=>{
     // earliestLedgerVersion was noted when the transaction was submitted.
     // txID was noted when the transaction was signed.
+
     async function func() {
         try {
             var tx;

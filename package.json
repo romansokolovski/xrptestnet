@@ -5,7 +5,10 @@
   "private": true,
   "//": "Change the license to something appropriate. You may want to use 'UNLICENSED' if you are just starting out.",
   "dependencies": {
-    "ripple-lib": "*"
+    "ripple-lib": "*",
+    "rippled-ws-client": "^1.0.0",
+    "rippled-ws-client-sign": "^0.2.0",
+    "websocket": "^1.0.29"
   },
   "devDependencies": {
     "eslint": "*"
