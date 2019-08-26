@@ -1,0 +1,13 @@
+//Install interledger
+$ npm install -g moneyd
+$ npm install -g ilp-spsp ilp-spsp-server
+
+
+// Run local interledger server
+$ moneyd local
+
+//Start SPSP server
+$ ilp-spsp-server --localtunnel false --port 8080
+
+//Sending Value
+$ ilp-spsp send --amount 10 --receiver 'http://localhost:8080'

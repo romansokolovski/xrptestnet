@@ -12,9 +12,9 @@ const SendingWallet = 'rax8ZG5tfe3iWkg2wV5qai8Ncrp7HhPri3'
 // The destination wallet
 const DestinationWallet = 'rUCzEr6jrEyMpjhs4wSdQdz4g8Y382NxfM'
 // The amount of XRP to send
-const AmountXRP = 1
+const AmountXRP = 23
 // The note
-const Note = 'admin@ledgermail.com'
+const Note = 'admin@chargemail.com'
 
 const Transaction = {
     TransactionType: 'Payment',
