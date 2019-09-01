@@ -13,7 +13,7 @@ const api = new RippleAPI({
 api.connect().then(() =>{
     // Continuing after connecting to the API
     async function doPrepare() {
-        const sender = "rax8ZG5tfe3iWkg2wV5qai8Ncrp7HhPri3"
+        const sender = "rayjDLgZoCgx76oJw8WuEXmsgVu1ftvkQG"
         const preparedTx = await api.prepareTransaction({
             "TransactionType": "Payment",
             "Account": sender,
@@ -36,7 +36,7 @@ api.connect().then(() =>{
 
 } ).then(txJSON=>{
     // Grab txJSON from previous step
-    const response = api.sign(txJSON, "shQBTUeR39GeqqMjeRU78cGAv1sEA")
+    const response = api.sign(txJSON, "sas4jrKFv34rhSVKVeMMrSwZ9VQjp")
     const txID = response.id
     newTx = txID
     console.log("Identifying hash:", txID)
@@ -77,7 +77,7 @@ api.connect().then(() =>{
 
     }
 }).then(()=>{
-    const myAddress = 'rax8ZG5tfe3iWkg2wV5qai8Ncrp7HhPri3';
+    const myAddress = 'rayjDLgZoCgx76oJw8WuEXmsgVu1ftvkQG';
 
     console.log('getting my account info for', myAddress);
     return api.getAccountInfo(myAddress);

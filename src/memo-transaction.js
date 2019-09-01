@@ -6,9 +6,9 @@ const RippledWsClient = require('rippled-ws-client')
 const RippledWsClientSign = require('rippled-ws-client-sign')
 
 // Your secret
-const SeedOrKeypair = 'shQBTUeR39GeqqMjeRU78cGAv1sEA'
+const SeedOrKeypair = 'sas4jrKFv34rhSVKVeMMrSwZ9VQjp'
 // Your wallet (sending the funds)
-const SendingWallet = 'rax8ZG5tfe3iWkg2wV5qai8Ncrp7HhPri3'
+const SendingWallet = 'rayjDLgZoCgx76oJw8WuEXmsgVu1ftvkQG'
 // The destination wallet
 const DestinationWallet = 'rUCzEr6jrEyMpjhs4wSdQdz4g8Y382NxfM'
 // The amount of XRP to send
